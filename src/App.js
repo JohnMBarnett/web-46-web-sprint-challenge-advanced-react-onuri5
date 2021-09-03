@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import axios from 'axios';
 
 import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
@@ -8,19 +7,18 @@ import CheckoutForm from "./components/CheckoutForm";
 
 import "./App.css";
 
+
+
 function App() {
-  // array of plants that have been added to the cart
   const [cart, setCart] = useState([]);
 
-  // add a plant to the cart
-  const addToCart = (plant) => {
-    setCart([...cart, plant]);
-  };
+    const addToCart = (plant) => {
+        setCart([...cart, plant]);
+    };
 
-  // remove a plant from the cart
-  const removeFromCart = (plant) => {
-    setCart(cart.filter((p) => p.id !== plant.id));
-  };
+    const removeFromCart = (plant) => {
+        setCart(cart.filter((p) => p.id !== plant.id));
+    };
 
   return (
     <div>
